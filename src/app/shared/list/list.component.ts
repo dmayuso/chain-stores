@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ListItem} from "./list.model";
 
 @Component({
@@ -9,6 +9,10 @@ import {ListItem} from "./list.model";
 export class ListComponent{
 
   @Input() listItems : Array<ListItem>;
+  @Output() reverseList: EventEmitter<void> = new EventEmitter<void>();
 
+  emitEvent(){
+    this.reverseList.emit();
+  }
 }
 
