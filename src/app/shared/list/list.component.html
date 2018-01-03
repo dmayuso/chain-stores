@@ -1,0 +1,8 @@
+<div>
+  <ul>
+    <li [attr.id]="i" *ngFor="let listItem of listItems; let i = index">
+      {{listItem.id + "-" + listItem.description}}
+    </li>
+  </ul>
+  <button>Reverse</button>
+</div>
