@@ -11,7 +11,9 @@ export class AppComponent {
    private title: string = 'CHAIN STORES FOR LUIS';
    public listItems: Array<ListItem>;
 
-  constructor(private _dataService: DataService){
+  constructor(private _dataService: DataService){ };
+
+  importData () {
     this.listItems = this._dataService.getListItems();
-  };
+  }
 }
