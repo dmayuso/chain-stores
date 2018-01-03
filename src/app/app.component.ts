@@ -8,7 +8,7 @@ import {DataService} from "./shared/data.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-   private title: string = 'CHAIN STORES FOR LUIS';
+   private title: string = 'chain stores for luis';
    public listItems: Array<ListItem>;
 
   constructor(private _dataService: DataService){ };
