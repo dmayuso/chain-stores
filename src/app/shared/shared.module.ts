@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import {DataService} from "./data.service";
 import {ListComponent} from "./list/list.component";
+import {ProductPipe} from "./list/product.pipe";
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    ListComponent
+    ListComponent,
+    ProductPipe
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import {ListComponent} from "./list/list.component";
     CommonModule,
     FormsModule,
     HeaderComponent,
-    ListComponent
+    ListComponent,
+    ProductPipe
   ],
   providers: [DataService]
 })
