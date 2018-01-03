@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import {DataService} from "./data.service";
+import {ListComponent} from "./list/list.component";
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    ListComponent
   ],
   imports: [
     CommonModule,
@@ -15,7 +17,8 @@ import {DataService} from "./data.service";
   exports: [
     CommonModule,
     FormsModule,
-    HeaderComponent
+    HeaderComponent,
+    ListComponent
   ],
   providers: [DataService]
 })
