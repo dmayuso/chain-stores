@@ -16,4 +16,8 @@ export class AppComponent {
   importData () {
     this.listItems = this._dataService.getListItems();
   }
+
+  reverseList () {
+    this.listItems.reverse();
+  }
 }
