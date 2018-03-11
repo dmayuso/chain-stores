@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import {DataService} from "./data.service";
-import {ListComponent} from "./list/list.component";
-import {ProductPipe} from "./list/product.pipe";
+import {CommonListComponent} from "./common-list/common-list.component";
+import {ProductPipe} from "./common-list/product.pipe";
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    ListComponent,
+    CommonListComponent,
     ProductPipe
   ],
   imports: [
@@ -20,7 +20,7 @@ import {ProductPipe} from "./list/product.pipe";
     CommonModule,
     FormsModule,
     HeaderComponent,
-    ListComponent,
+    CommonListComponent,
     ProductPipe
   ],
   providers: [DataService]

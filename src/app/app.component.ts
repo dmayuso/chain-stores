@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import {ListItem} from "./shared/list/list.model";
-import {DataService} from "./shared/data.service";
 
 @Component({
   selector: 'app-root',
@@ -8,16 +6,7 @@ import {DataService} from "./shared/data.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-   private title: string = 'chain stores for luis';
-   public listItems: Array<ListItem>;
+   private title: string = 'Products shop';
 
-  constructor(private _dataService: DataService){ };
 
-  importData () {
-    this.listItems = this._dataService.getListItems();
-  }
-
-  reverseList () {
-    this.listItems.reverse();
-  }
 }

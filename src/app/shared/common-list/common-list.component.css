@@ -1,0 +1,12 @@
+.common-list-item {
+  border: 1px solid;
+  width: 100%;
+  height: 40px;
+  margin: 10px 0 0 0;
+  text-align: center;
+  padding-top: 10px;
+  background-color: #48b6fa;
+  font-family: Arial, sans-serif, helvetica;
+  color: azure;
+  cursor:pointer;
+}
