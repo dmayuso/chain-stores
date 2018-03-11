@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ListItem} from "../../shared/common-list/common-list.model";
 import {DataService} from "../../shared/data.service";
 
@@ -12,16 +12,21 @@ export class DetailComponent implements OnInit {
 
   private item: ListItem;
 
-  constructor(private route: ActivatedRoute,
+  constructor(private activatedRoute: ActivatedRoute,
+              private router: Router,
               private _dataService: DataService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
+    this.activatedRoute.params.subscribe(params => {
       let itemId = params['id'];
       if (itemId !== undefined) {
         this.item = this._dataService.getListItem(itemId);
       }
     });
+  }
+
+  backToList() {
+    this.router.navigate(['/products/list']);
   }
 
 }
