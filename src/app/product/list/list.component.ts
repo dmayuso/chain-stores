@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from "../../shared/data.service";
+import {ListItem} from "../../shared/common-list/common-list.model";
 
 @Component({
   selector: 'app-list',
@@ -7,7 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  public listItems: Array<ListItem>;
+
+  constructor(private _dataService: DataService){
+  }
+
+  importData () {
+    this.listItems = this._dataService.getListItems();
+  }
+
+  reverseList () {
+    this.listItems.reverse();
+  }
+
 
   ngOnInit() {
   }
