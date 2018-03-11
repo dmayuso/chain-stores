@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
-import {DataService} from "./data.service";
+import {ProductService} from "./services/product.service";
 import {CommonListComponent} from "./common-list/common-list.component";
 import {ProductPipe} from "./common-list/product.pipe";
 
@@ -23,6 +23,6 @@ import {ProductPipe} from "./common-list/product.pipe";
     CommonListComponent,
     ProductPipe
   ],
-  providers: [DataService]
+  providers: [ProductService]
 })
 export class SharedModule { }

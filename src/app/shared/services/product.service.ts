@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {ListItem} from "./common-list/common-list.model";
+import {ListItem} from "../common-list/common-list.model";
 
 @Injectable()
-export class DataService{
+export class ProductService{
 
   private listItems: Array<ListItem> = [
     {

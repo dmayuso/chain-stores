@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ListItem} from "../../shared/common-list/common-list.model";
-import {DataService} from "../../shared/data.service";
+import {ProductService} from "../../shared/services/product.service";
 
 @Component({
   selector: 'app-detail',
@@ -14,7 +14,7 @@ export class DetailComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
-              private _dataService: DataService) { }
+              private _dataService: ProductService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
