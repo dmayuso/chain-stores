@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../../shared/data.service";
 import {ListItem} from "../../shared/common-list/common-list.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-list',
@@ -11,7 +12,8 @@ export class ListComponent implements OnInit {
 
   public listItems: Array<ListItem>;
 
-  constructor(private _dataService: DataService){
+  constructor(private _dataService: DataService,
+              private router: Router){
   }
 
   importData () {
@@ -20,6 +22,10 @@ export class ListComponent implements OnInit {
 
   reverseList () {
     this.listItems.reverse();
+  }
+
+  clickOnProduct(id) {
+    this.router.navigate(['/products/list/' + id]);
   }
 
 

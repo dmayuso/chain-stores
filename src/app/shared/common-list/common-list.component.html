@@ -1,6 +1,6 @@
 <div>
   <ul>
-    <li [attr.id]="i" *ngFor="let listItem of listItems; let i = index">
+    <li class="common-list-item list-group-item" (click)="clickEvent(listItem.id)" [attr.id]="i" *ngFor="let listItem of listItems; let i = index">
       {{listItem.id | product }} - {{ listItem.description}}
     </li>
   </ul>
