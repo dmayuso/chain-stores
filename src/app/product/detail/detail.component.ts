@@ -10,7 +10,7 @@ import {ProductService} from "../../shared/services/product.service";
 })
 export class DetailComponent implements OnInit {
 
-  private item: ListItem;
+  private item: ListItem = {} as ListItem;
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
@@ -20,7 +20,11 @@ export class DetailComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       let itemId = params['id'];
       if (itemId !== undefined) {
-        this.item = this._dataService.getListItem(itemId);
+        this._dataService.getListItem(itemId).subscribe((data) => {
+          if(data) {
+            this.item = data;
+          }
+        });
       }
     });
   }

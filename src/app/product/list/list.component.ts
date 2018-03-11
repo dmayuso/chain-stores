@@ -21,7 +21,7 @@ export class ListComponent implements OnInit {
       if(data) {
         this.listItems = data;
       }
-    })
+    });
   }
 
   reverseList () {
