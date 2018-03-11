@@ -6,16 +6,16 @@ export class DataService{
 
   private listItems: Array<ListItem> = [
     {
-      id: '1',
-      description: 'Nintendo Switch'
+      id: 1,
+      description: 'TV'
     },
     {
-      id: '2',
-      description: 'Play Station 4 pro'
+      id: 2,
+      description: 'PHONE'
     },
     {
-      id: '3',
-      description: 'XBox'
+      id: 3,
+      description: 'ELECTRO'
     }
   ];
 
@@ -25,6 +25,10 @@ export class DataService{
 
   getListItems(): Array<ListItem> {
     return this.listItems;
+  }
+
+  getListItem(id: number): ListItem {
+    return this.getListItems().find((item) => item.id == id);
   }
 
   addListItem(listItem: ListItem): void{
