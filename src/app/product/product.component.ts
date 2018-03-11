@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../shared/data.service";
-import {ListItem} from "../shared/list/list.model";
+import {ListItem} from "../shared/common-list/common-list.model";
 
 @Component({
   selector: 'app-product',

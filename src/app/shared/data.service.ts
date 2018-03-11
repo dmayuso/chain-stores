@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {ListItem} from "./list/list.model";
+import {ListItem} from "./common-list/common-list.model";
 
 @Injectable()
 export class DataService{
