@@ -12,12 +12,16 @@ export class ListComponent implements OnInit {
 
   public listItems: Array<ListItem>;
 
-  constructor(private _dataService: ProductService,
+  constructor(private productService: ProductService,
               private router: Router){
   }
 
   importData () {
-    this.listItems = this._dataService.getListItems();
+    this.productService.getListItems().subscribe( (data) => {
+      if(data) {
+        this.listItems = data;
+      }
+    })
   }
 
   reverseList () {

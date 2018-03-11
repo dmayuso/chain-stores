@@ -1,8 +1,12 @@
 import {Injectable} from '@angular/core';
 import {ListItem} from "../common-list/common-list.model";
+import {DataService} from "./data.service";
+import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class ProductService{
+
+  constructor(private dataService: DataService){}
 
   private listItems: Array<ListItem> = [
     {
@@ -19,16 +23,13 @@ export class ProductService{
     }
   ];
 
-  contructor(){
 
-  }
-
-  getListItems(): Array<ListItem> {
-    return this.listItems;
+  getListItems(): Observable<any> {
+    return this.dataService.get('product');
   }
 
   getListItem(id: number): ListItem {
-    return this.getListItems().find((item) => item.id == id);
+    return this.listItems.find((item) => item.id == id);
   }
 
   addListItem(listItem: ListItem): void{
