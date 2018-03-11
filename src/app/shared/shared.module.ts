@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import {ProductService} from "./services/product.service";
 import {CommonListComponent} from "./common-list/common-list.component";
 import {ProductPipe} from "./common-list/product.pipe";
+import {DataService} from "./services/data.service";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,6 @@ import {ProductPipe} from "./common-list/product.pipe";
     CommonListComponent,
     ProductPipe
   ],
-  providers: [ProductService]
+  providers: [DataService, ProductService]
 })
 export class SharedModule { }
