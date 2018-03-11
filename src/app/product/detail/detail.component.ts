@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {ListItem} from "../../shared/common-list/common-list.model";
 import {ProductService} from "../../shared/services/product.service";
+import {Product} from "../../shared/domain/product.model";
 
 @Component({
   selector: 'app-detail',
@@ -10,7 +10,7 @@ import {ProductService} from "../../shared/services/product.service";
 })
 export class DetailComponent implements OnInit {
 
-  private item: ListItem = {} as ListItem;
+  private product: Product = {} as Product;
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
@@ -22,7 +22,7 @@ export class DetailComponent implements OnInit {
       if (itemId !== undefined) {
         this._dataService.getListItem(itemId).subscribe((data) => {
           if(data) {
-            this.item = data;
+            this.product = data;
           }
         });
       }
