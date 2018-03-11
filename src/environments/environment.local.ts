@@ -1,4 +1,4 @@
 export const environment = {
-  production: true,
+  production: false,
   api: 'http://weblogic.innocv.com/curso-angular-api/api/'
 };

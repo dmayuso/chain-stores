@@ -3,6 +3,13 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "serve.local": "ng serve --target=development --environment=local --base-href=/shop",
+    "serve.test": "ng serve --target=development --environment=test --base-href=/shop",
+    "serve.prod": "ng serve --target=development --environment=prod --base-href=/shop",
+    "serve": "ng build --target=development --environment=local --base-href=/shop",
+    "build.test": "ng build --target=production --environment=test --base-href=/shop",
+    "build.uat": "ng build --target=production --environment=uat --base-href=/shop",
+    "build.prod": "ng build --target=production --environment=prod --base-href /shop",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
