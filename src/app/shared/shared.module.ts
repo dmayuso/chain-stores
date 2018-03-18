@@ -7,6 +7,7 @@ import {CommonListComponent} from "./common-list/common-list.component";
 import {ProductPipe} from "./common-list/product.pipe";
 import {DataService} from "./services/data.service";
 import {AuthService} from "./services/auth.service";
+import {AuthGuardService} from "./services/auth-guard.service";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ export class SharedModule {
       ngModule: SharedModule,
       providers: [
         DataService,
-        AuthService
+        AuthService,
+        AuthGuardService
       ]
     };
   }
