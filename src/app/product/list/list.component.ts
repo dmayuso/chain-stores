@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../shared/services/product.service";
 import {ListItem} from "../../shared/common-list/common-list.model";
 import {Router} from "@angular/router";
+import {Store} from "@ngrx/store";
+import {AuthState} from "../../shared/reducers/auth.state";
+import * as authReducer from '../../shared/reducers/auth.reducer';
 
 @Component({
   selector: 'app-list',
@@ -13,7 +16,13 @@ export class ListComponent implements OnInit {
   public listItems: Array<ListItem>;
 
   constructor(private productService: ProductService,
-              private router: Router){
+              private router: Router,
+              private authStore: Store<AuthState>){
+
+      this.authStore.select(authReducer.getAuthUser).subscribe((user) => {
+        this.importData();
+      });
+
   }
 
   importData () {

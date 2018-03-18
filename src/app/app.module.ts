@@ -7,7 +7,8 @@ import {ProductModule} from './product/product.module';
 import {HttpClientModule} from '@angular/common/http';
 import {LoginModule} from "./login/login/login.module";
 import {AuthService} from "./shared/services/auth.service";
-
+import {StoreModule} from "@ngrx/store";
+import {reducers} from "./shared/reducers/reducers";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {AuthService} from "./shared/services/auth.service";
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    StoreModule.forRoot(reducers),
     LoginModule,
     ProductModule,
     SharedModule.forRoot()
