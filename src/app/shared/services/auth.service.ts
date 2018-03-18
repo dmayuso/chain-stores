@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {User} from "../domain/login.model";
+import {UserModel} from "../domain/login.model";
 
 @Injectable()
 export class AuthService {
@@ -11,7 +11,7 @@ export class AuthService {
     return window.localStorage.getItem('tm-login');
   }
 
-  login (user: User) {
+  login (user: UserModel) {
     console.log("user logged -> " + user.username);
     window.localStorage.setItem('tm-login', 'true');
   }
