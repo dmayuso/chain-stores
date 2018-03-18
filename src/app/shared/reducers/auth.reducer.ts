@@ -1,15 +1,24 @@
-import {AuthState} from "./auth.state";
 import {AUTH, AuthAction} from "../actions/auth.action";
+import {createFeatureSelector, createSelector} from "@ngrx/store";
+import {UserModel} from "../domain/login.model";
 
-export const initialState: AuthState = { authState: {} };
+export const initialState: UserModel = {  username: '', password: ''};
 
-export function reducer(state = initialState, action: AuthAction): AuthState {
+export function authReducer(state = initialState, action: AuthAction): UserModel {
   switch(action.type) {
     case AUTH: {
-      return {authState: action.payload};
+      return action.payload;
     }
     default: {
       return state;
     }
   }
 }
+
+export const getAuthState = createFeatureSelector<UserModel>('authState');
+
+export const getAuthUser = createSelector(
+  getAuthState,
+  (state: UserModel) => state
+);
+
