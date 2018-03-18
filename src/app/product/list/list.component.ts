@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../../shared/data.service";
+import {ProductService} from "../../shared/services/product.service";
 import {ListItem} from "../../shared/common-list/common-list.model";
 import {Router} from "@angular/router";
 
@@ -12,12 +12,16 @@ export class ListComponent implements OnInit {
 
   public listItems: Array<ListItem>;
 
-  constructor(private _dataService: DataService,
+  constructor(private productService: ProductService,
               private router: Router){
   }
 
   importData () {
-    this.listItems = this._dataService.getListItems();
+    this.productService.getListItems().subscribe( (data) => {
+      if(data) {
+        this.listItems = data;
+      }
+    });
   }
 
   reverseList () {

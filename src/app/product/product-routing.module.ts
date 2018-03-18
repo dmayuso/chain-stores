@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import {ProductComponent} from "./product.component";
 import {ListComponent} from "./list/list.component";
 import {DetailComponent} from "./detail/detail.component";
+import {AuthGuardService} from "../shared/services/auth-guard.service";
 
 @NgModule({
   imports: [
@@ -11,10 +12,13 @@ import {DetailComponent} from "./detail/detail.component";
       {
         component: ProductComponent,
         path: 'products',
+        canActivate: [
+          AuthGuardService
+        ],
         children: [
-          { path: '', redirectTo: '/products/list', pathMatch: 'full' },
-          { path: 'list', component: ListComponent },
-          { path: 'list/:id', component: DetailComponent }
+          {path: '', redirectTo: '/products/list', pathMatch: 'full'},
+          {path: 'list', component: ListComponent},
+          {path: 'list/:id', component: DetailComponent}
         ]
       }
     ])
