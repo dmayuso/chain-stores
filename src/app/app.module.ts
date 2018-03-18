@@ -18,7 +18,7 @@ import {LoginModule} from "./login/login/login.module";
     AppRoutingModule,
     LoginModule,
     ProductModule,
-    SharedModule
+    SharedModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
