@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +8,11 @@ import {Component, Input} from '@angular/core';
 export class HeaderComponent{
 
   @Input() title: string;
+  @Output() clickLogout: EventEmitter<void> = new EventEmitter<void>();
+
+  logout() {
+    this.clickLogout.emit();
+  }
 
 }
 

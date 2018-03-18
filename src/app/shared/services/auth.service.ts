@@ -20,6 +20,7 @@ export class AuthService {
 
   logout () {
     window.localStorage.removeItem('tm-login');
+    window.location.reload();
   }
 }
 

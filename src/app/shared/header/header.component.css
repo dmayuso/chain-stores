@@ -9,16 +9,21 @@
   background-color: #48b6fa;
   color: azure;
   font-family: Arial, sans-serif, helvetica;
+  display: inline;
   position: fixed;
   top: 0;
   left: 0;
-  -webkit-box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.5);
-  box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.5);
-  z-index: 100;
-  display: block;
+  z-index: 95;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,.4) !important;
 }
 
 h1 {
   margin-left: 200px;
+  margin-right: 100px;
+}
+
+.close-session-btn {
+  margin-right : 50px;
+  margin-top: -50px;
+  float: right;
 }
