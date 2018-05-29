@@ -1,6 +1,6 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import {ProductService} from "./services/product.service";
 import {CommonListComponent} from "./common-list/common-list.component";
@@ -17,11 +17,13 @@ import {AuthGuardService} from "./services/auth-guard.service";
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     HeaderComponent,
     CommonListComponent,
     ProductPipe
