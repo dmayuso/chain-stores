@@ -6,6 +6,8 @@ import {RouterModule} from "@angular/router";
 import {ListComponent} from "./list/list.component";
 import {SharedModule} from "../shared/shared.module";
 import { DetailComponent } from './detail/detail.component';
+import { ProductFormComponent } from './shared/product-form/product-form.component';
+import { CreateProductComponent } from './create/create.component';
 
 @NgModule({
   imports: [
@@ -16,7 +18,9 @@ import { DetailComponent } from './detail/detail.component';
   declarations: [
     ProductComponent,
     ListComponent,
-    DetailComponent
+    DetailComponent,
+    ProductFormComponent,
+    CreateProductComponent
   ],
   exports: [
     RouterModule
