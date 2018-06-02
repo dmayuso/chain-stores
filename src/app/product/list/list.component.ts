@@ -42,7 +42,7 @@ export class ListComponent implements OnInit {
   }
 
   createProduct() {
-
+    this.router.navigate(['/products/new']);
   }
 
   ngOnInit() {
