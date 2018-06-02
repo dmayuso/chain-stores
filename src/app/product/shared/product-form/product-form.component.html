@@ -1,3 +1,34 @@
-<p>
-  product-form works!
-</p>
+<div>
+  <form [formGroup]="createProductForm" novalidate class="form">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="form-group">
+          <label for="productId">ID</label>
+          <div class="separator-10"></div>
+          <input type="text" name="productId" class="form-control" placeholder="product ID" id="productId" formControlName="productId"
+                 [(ngModel)]="product.model.id" autofocus>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <div class="form-group">
+          <label for="description">Description</label>
+          <div class="separator-10"></div>
+          <input type="text" name="description" class="form-control" placeholder="description" id="description" formControlName="description"
+                 [(ngModel)]="product.model.description" autofocus>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <div class="form-group">
+          <label for="price">Price</label>
+          <div class="separator-10"></div>
+          <input type="text" name="price" class="form-control" placeholder="price" id="price" formControlName="price"
+                 [(ngModel)]="product.model.price" autofocus>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
