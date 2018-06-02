@@ -10,11 +10,16 @@ export class CommonListComponent{
 
   @Input() listItems : Array<ListItem>;
   @Output() reverseList: EventEmitter<void> = new EventEmitter<void>();
+  @Output() createProduct: EventEmitter<void> = new EventEmitter<void>();
   @Output() clickOnItem: EventEmitter<number> = new EventEmitter<number>();
 
 
   emitEvent(){
     this.reverseList.emit();
+  }
+
+  emitCreateEvent(){
+    this.createProduct.emit();
   }
 
   clickEvent(id) {
