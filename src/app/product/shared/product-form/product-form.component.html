@@ -36,7 +36,7 @@
           <label for="type">Type</label>
           <div class="separator-10"></div>
           <select [(ngModel)]="product.model.type" id="type" name="type" formControlName="type">
-            <option *ngFor="let type of productTypes" [value]="type.id">{{type.name}}</option>
+            <option *ngFor="let type of productTypes" [value]="type.id">{{type.description}}</option>
           </select>
         </div>
       </div>

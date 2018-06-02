@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Product} from "../../../shared/domain/product.model";
+import {ProductTypeModel} from "../../../shared/domain/product-type.model";
 
 @Component({
   selector: 'app-product-form',
@@ -11,7 +12,8 @@ export class ProductFormComponent implements OnInit {
 
   createProductForm: FormGroup;
   product: Product;
-  productTypes: Array<any>;
+  @Input() productTypes: Array<ProductTypeModel>;
+
 
   constructor(private formBuilder: FormBuilder) {
     this.product = new Product();

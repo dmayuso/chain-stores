@@ -11,11 +11,11 @@ export class Product {
 
   constructor() {
     this.model = {
-      id: -1,
-      description: '',
-      price: 0,
-      idType: 0,
-      type: ''
+      id: undefined,
+      description: undefined,
+      price: undefined,
+      idType: undefined,
+      type: undefined
     }
   }
 }

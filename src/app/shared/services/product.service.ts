@@ -15,4 +15,8 @@ export class ProductService{
     return this.dataService.get('product/' + id);
   }
 
+  getListType():  Observable<any> {
+    return this.dataService.get('type');
+  }
+
 }
