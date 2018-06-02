@@ -11,6 +11,7 @@ export class ProductFormComponent implements OnInit {
 
   createProductForm: FormGroup;
   product: Product;
+  productTypes: Array<any>;
 
   constructor(private formBuilder: FormBuilder) {
     this.product = new Product();
@@ -21,7 +22,8 @@ export class ProductFormComponent implements OnInit {
     this.createProductForm = this.formBuilder.group({
       productId: ['', Validators.required],
       description: ['', Validators.required],
-      price: ['', Validators.required]
+      price: ['', Validators.required],
+      type: ['', Validators.required]
     });
   }
 
