@@ -6,6 +6,6 @@ import {Pipe, PipeTransform} from '@angular/core';
 export class ProductPipe implements PipeTransform {
 
   transform(id: string){
-    return 'Product ' + id;
+    return 'ProductModel ' + id;
   }
 }
