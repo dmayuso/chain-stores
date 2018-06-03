@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Product} from "../../../shared/domain/product.model";
+import { ProductModel} from "../../../shared/domain/product.model";
 import {ProductTypeModel} from "../../../shared/domain/product-type.model";
 
 @Component({
@@ -11,12 +11,10 @@ import {ProductTypeModel} from "../../../shared/domain/product-type.model";
 export class ProductFormComponent implements OnInit {
 
   createProductForm: FormGroup;
-  product: Product;
   @Input() productTypes: Array<ProductTypeModel>;
-
+  @Input() product: ProductModel;
 
   constructor(private formBuilder: FormBuilder) {
-    this.product = new Product();
     this.buildForm();
   }
 
