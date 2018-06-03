@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {DataService} from "./data.service";
 import {Observable} from "rxjs/Observable";
+import {ProductModel} from "../domain/product.model";
 
 @Injectable()
 export class ProductService{
@@ -15,8 +16,12 @@ export class ProductService{
     return this.dataService.get('product/' + id);
   }
 
-  getListType():  Observable<any> {
+  getListType(): Observable<any> {
     return this.dataService.get('type');
+  }
+
+  saveProduct(product: ProductModel): Observable<any> {
+    return this.dataService.post('product', product);
   }
 
 }
