@@ -1,18 +1,18 @@
 <div class="login-class">
   <div class="row">
     <div class="col-md-12">
-      <form form (ngSubmit)="doLogin()" #loginForm="ngForm" novalidate class="form-signin">
+      <form [formGroup]="loginForm" form (ngSubmit)="doLogin()" novalidate class="form-signin">
         <div class="form-group">
           <label for="user">User</label>
-          <input type="text" name="user" class="input-text" placeholder="User" id="user"
-                 [(ngModel)]="user.model.username" required autofocus>
+          <input type="text" name="username" class="form-control" placeholder="User" id="user" formControlName="username"
+                 [(ngModel)]="user.model.username" autofocus>
         </div>
         <div class="form-group">
           <label for="pass">Password</label>
-          <input type="password" name="password" class="input-text" placeholder="Password" id="pass"
-                 [(ngModel)]="user.model.password" required>
+          <input type="password" name="password" class="form-control" placeholder="Password" id="pass" formControlName="password"
+                 [(ngModel)]="user.model.password">
         </div>
-        <button class="button-password" type="submit">Login</button>
+        <button class="button-password">Login</button>
       </form>
     </div>
   </div>

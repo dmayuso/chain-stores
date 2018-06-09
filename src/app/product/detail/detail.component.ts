@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProductService} from "../../shared/services/product.service";
-import {Product} from "../../shared/domain/product.model";
+import {ProductModel} from "../../shared/domain/product.model";
 
 @Component({
   selector: 'app-detail',
@@ -10,7 +10,7 @@ import {Product} from "../../shared/domain/product.model";
 })
 export class DetailComponent implements OnInit {
 
-  private product: Product = {} as Product;
+  private product: ProductModel = {} as ProductModel;
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,

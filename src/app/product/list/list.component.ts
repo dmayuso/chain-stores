@@ -41,6 +41,9 @@ export class ListComponent implements OnInit {
     this.router.navigate(['/products/list/' + id]);
   }
 
+  createProduct() {
+    this.router.navigate(['/products/new']);
+  }
 
   ngOnInit() {
   }

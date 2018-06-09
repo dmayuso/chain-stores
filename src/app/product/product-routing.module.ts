@@ -5,6 +5,7 @@ import {ProductComponent} from "./product.component";
 import {ListComponent} from "./list/list.component";
 import {DetailComponent} from "./detail/detail.component";
 import {AuthGuardService} from "../shared/services/auth-guard.service";
+import {CreateProductComponent} from "./create/create.component";
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {AuthGuardService} from "../shared/services/auth-guard.service";
         children: [
           {path: '', redirectTo: '/products/list', pathMatch: 'full'},
           {path: 'list', component: ListComponent},
-          {path: 'list/:id', component: DetailComponent}
+          {path: 'list/:id', component: DetailComponent},
+          {path: 'new', component: CreateProductComponent}
         ]
       }
     ])
