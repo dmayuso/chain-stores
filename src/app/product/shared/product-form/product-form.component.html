@@ -1,12 +1,11 @@
 <div>
-  <form [formGroup]="createProductForm" novalidate class="form">
+  <form [formGroup]="productForm" novalidate class="form">
     <div class="row">
       <div class="col-md-5">
         <div class="form-group">
           <label for="productId">ID</label>
           <div class="separator-10"></div>
-          <input type="text" name="productId" class="form-control" placeholder="product ID" id="productId" formControlName="productId"
-                 [(ngModel)]="product.id" autofocus>
+          <input type="text" name="productId" class="form-control" placeholder="product ID" id="productId" formControlName="productId" autofocus>
         </div>
       </div>
     </div>
@@ -15,8 +14,7 @@
         <div class="form-group">
           <label for="description">Description</label>
           <div class="separator-10"></div>
-          <input type="text" name="description" class="form-control" placeholder="description" id="description" formControlName="description"
-                 [(ngModel)]="product.description" autofocus>
+          <input type="text" name="description" class="form-control" placeholder="description" id="description" formControlName="description">
         </div>
       </div>
     </div>
@@ -25,8 +23,7 @@
         <div class="form-group">
           <label for="price">Price</label>
           <div class="separator-10"></div>
-          <input type="text" name="price" class="form-control" placeholder="price" id="price" formControlName="price"
-                 [(ngModel)]="product.price" autofocus>
+          <input type="text" name="price" class="form-control" placeholder="price" id="price" formControlName="price">
         </div>
       </div>
     </div>
@@ -35,7 +32,7 @@
         <div class="form-group">
           <label for="type">Type</label>
           <div class="separator-10"></div>
-          <select [(ngModel)]="product.type" id="type" name="type" formControlName="type">
+          <select id="type" name="type" formControlName="type">
             <option *ngFor="let type of productTypes" [value]="type.id">{{type.description}}</option>
           </select>
         </div>

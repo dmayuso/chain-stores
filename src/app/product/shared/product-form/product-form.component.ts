@@ -10,17 +10,17 @@ import {ProductTypeModel} from "../../../shared/domain/product-type.model";
 })
 export class ProductFormComponent implements OnInit {
 
-  createProductForm: FormGroup;
+  productForm: FormGroup;
   @Input() productTypes: Array<ProductTypeModel>;
-  @Input() product: ProductModel;
+  @Input() product: ProductModel = {} as ProductModel;
 
   constructor(private formBuilder: FormBuilder) {
     this.buildForm();
   }
 
   buildForm() {
-    this.createProductForm = this.formBuilder.group({
-      productId: ['', Validators.required],
+    this.productForm = this.formBuilder.group({
+      productId: [this.product.id, Validators.required],
       description: ['', Validators.required],
       price: ['', Validators.required],
       type: ['', Validators.required]
